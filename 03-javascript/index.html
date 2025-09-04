@@ -11,19 +11,29 @@
       src="https://i.namu.wiki/i/kI4sD-o5UPY9Rh6hgCOyAxsor2ZHj02GDxV_JGdzRxPkATP0yJbtxx0hOxQFp8Fo3G5-gKDxvZu6fB95w7BIcTHmzFYbtinw2_1YX5Zkmkf3JuNZ7LmvomHXkswPY8yXoNmnmlqFqtYYjp344HcCIA.webp"
       alt="고양이사진"
     />
-    <p>고양이는 쥐와 생선을 아주 좋아합니다.</p>
+    <p id="myParagraph">고양이는 쥐와 생선을 아주 좋아합니다.</p>
     <a href="https://namu.wiki/w/%EA%B3%A0%EC%96%91%EC%9D%B4"
       >고양이 더 알아보기</a
     >
     <button id="myButton">클릭해보세요!</button>
     <script>
       // 1. 버튼을 찾아서 'myButton'이라는 변수에 저장해요.
-      const myButton = document.getElementById("myButton");
+      // const myButton = document.getElementById("myButton");
 
+      // 2. 이 버튼에 '클릭' 이벤트가 발생하면,
+      // myButton.addEventListener("click", function () {
+      // 3. 이 안에 있는 코드를 실행해줘!
+      //   alert("안녕하세요!");
+      // });
+
+      // 1. 버튼을 찾아서 'myButton'이라는 변수에 저장해요.
+
+      const myParagraph = document.getElementById("myParagraph");
       // 2. 이 버튼에 '클릭' 이벤트가 발생하면,
       myButton.addEventListener("click", function () {
         // 3. 이 안에 있는 코드를 실행해줘!
-        alert("안녕하세요!");
+        myParagraph.innerText =
+          "고양이는 따뜻한 햇볕 아래 잠자는 것을 좋아합니다.";
       });
     </script>
   </body>

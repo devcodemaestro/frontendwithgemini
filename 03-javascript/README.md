@@ -47,7 +47,7 @@ HTML 파일의 <body> 태그 안에 다음과 같이 코드를 추가합니다.
 ```html
 </body>
 <script>
-  // 여기에 자바스크립트 코드를 작성할 거예요.
+  // 여기에 자바스크립트 코드를 작성합니다.
 </script>
 ```
 
@@ -112,12 +112,12 @@ HTML 파일의 \<button> 태그를 다음과 같이 수정하겠습니다.
 자, 이제 자바스크립트 코드를 작성해 볼까요? \<script> 태그 안에 다음과 같은 코드를 추가합니다.
 
 ```javascript
-// 1. 버튼을 찾아서 'myButton'이라는 변수에 저장해요.
+// 1. 버튼을 찾아서 'myButton'이라는 변수에 저장합니다.
 const myButton = document.getElementById("myButton");
 
 // 2. 이 버튼에 '클릭' 이벤트가 발생하면,
 myButton.addEventListener("click", function () {
-  // 3. 이 안에 있는 코드를 실행해줘!
+  // 3. 이 안에 있는 코드를 실행합니다!
   alert("안녕하세요!");
 });
 ```
@@ -147,3 +147,64 @@ myButton.addEventListener("click", function () {
 myButton에 **'클릭'** 이라는 이벤트가 발생하면, function() { ... } 안에 있는 코드를 실행하라는 뜻입니다.
 
 이렇게 자바스크립트는 웹페이지에 생명력을 불어넣어서 사용자와 상호작용할 수 있게 만들어줍니다.
+
+### 복습
+
+이번에는 버튼을 누르면 알림 창이 뜨는 대신, 우리가 만든 **문단(p 태그)** 의 내용이 **"고양이는 쥐와 생선을 아주 좋아합니다."** 에서 **"고양이는 따뜻한 햇볕 아래 잠자는 것을 좋아합니다."** 로 바뀌게 만들어보겠습니다.
+
+이 기능을 구현하려면 우리가 앞서 배웠던 document.getElementById()를 사용해서 <p> 태그도 찾아야 합니다.
+
+HTML 파일의 <p> 태그를 다음과 같이 수정해서 id를 myParagraph라고 지정해 볼까요?
+
+```html
+<p id="myParagraph">고양이는 쥐와 생선을 아주 좋아합니다.</p>
+```
+
+이제 자바스크립트 코드에서 이 myParagraph를 찾아서 내용을 바꿔야 합니다.
+
+자바스크립트에서는 .innerText라는 속성을 사용하면 특정 태그의 안쪽 내용을 바꿀 수 있습니다.
+
+```javascript
+// 'myParagraph'라는 id를 가진 요소를 찾아서 myParagraph 변수에 저장합니다.
+const myParagraph = document.getElementById("myParagraph");
+
+// myParagraph의 안쪽 내용을 "새로운 내용"으로 바꿔줍니다.
+myParagraph.innerText = "새로운 내용";
+```
+
+자, 그럼 이 두 가지를 조합해서, 버튼을 클릭하면 문단의 내용이 바뀌도록 자바스크립트 코드를 직접 작성해 보실까요?
+
+### 결과
+
+```javascript
+const myParagraph = document.getElementById("myParagraph");
+myButton.addEventListener("click", function () {
+  myParagraph.innerText = "고양이는 따뜻한 햇볕 아래 잠자는 것을 좋아합니다.";
+});
+```
+
+위의 코드를 분석해보겠습니다.
+
+- const myParagraph = document.getElementById("myParagraph");
+
+이제 자바스크립트는 myParagraph라는 id를 가진 <p> 태그를 찾아 myParagraph라는 변수에 저장했습니다.
+
+- myButton.addEventListener("click", function () { ... });
+
+myButton에 '클릭' 이벤트가 발생하면, 그 안에 있는 코드가 실행됩니다.
+
+- myParagraph.innerText = "고양이는 따뜻한 햇볕 아래 잠자는 것을 좋아합니다.";
+
+이 코드가 바로 myParagraph의 안쪽 텍스트를 새로운 문장으로 바꾸는 역할을 합니다.
+
+이제 HTML, CSS, 그리고 자바스크립트의 기본적인 역할을 모두 경험해 봤습니다.
+
+### 정리
+
+HTML: 웹페이지의 뼈대를 만드는 구조
+
+CSS: 웹페이지를 꾸미는 스타일
+
+자바스크립트: 웹페이지를 동적으로 움직이게 하는 기능
+
+이 세 가지 언어는 프론트엔드 개발의 가장 핵심적인 도구들입니다.
